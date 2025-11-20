@@ -83,9 +83,13 @@ while True:
     if not q:
         continue
 
-    result = rag_chain.invoke(q)
     print("\nAnswer:")
-    print(result)
+    # -------------------------------
+    # STREAMING RESPONSE (typing effect)
+    # -------------------------------
+    for chunk in rag_chain.stream(q):
+        print(chunk, end="", flush=True)
+    print("\n")
 
     # show retrieved docs
     docs = retriever.invoke(q)
