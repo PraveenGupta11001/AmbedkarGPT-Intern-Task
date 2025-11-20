@@ -1,4 +1,7 @@
 notes.ipynb
 venv
 chroma_db
+chroma_eval_300
+chroma_eval_600
+chroma_eval_900
 .vscode
